@@ -137,6 +137,7 @@ template<IntType t> void INT()
     T; if (t != BRK) T;  // BRK already performed the fetch.
     if (t != RESET)  // Writes on stack are inhibited on RESET.
     {
+        if( t == BRK ) ++PC;
         push(PC >> 8); push(PC & 0xFF);
         push(P.get() | ((t == BRK) << 4));  // Set B if BRK.
     }
