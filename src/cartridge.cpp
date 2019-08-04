@@ -6,6 +6,7 @@
 #include "mappers/mapper2.hpp"
 #include "mappers/mapper3.hpp"
 #include "mappers/mapper4.hpp"
+#include "mappers/mapper9.hpp"
 #include "ppu.hpp"
 #include "cartridge.hpp"
 
@@ -57,6 +58,7 @@ void load(const char* fileName)
         case 2:  mapper = new Mapper2(rom); break;
         case 3:  mapper = new Mapper3(rom); break;
         case 4:  mapper = new Mapper4(rom); break;
+        case 9:  mapper = new Mapper9(rom); break;
     }
 
     CPU::power();
@@ -67,6 +69,11 @@ void load(const char* fileName)
 bool loaded()
 {
     return mapper != nullptr;
+}
+
+void ppu_tick(uint16_t address)
+{
+    mapper->ppu_tick(address);
 }
 
 

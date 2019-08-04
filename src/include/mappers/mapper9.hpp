@@ -31,5 +31,5 @@ class Mapper9 : public Mapper
 
 
     u8 write(u16 addr, u8 v);
-    void ppu_tick_callback(u16 addr);
+    void ppu_tick(u16 addr);
 };

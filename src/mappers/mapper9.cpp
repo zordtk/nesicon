@@ -29,7 +29,7 @@ u8 Mapper9::write(u16 addr, u8 v)
     return v;
 }
 
-void Mapper9::ppu_tick_callback(u16 addr)
+void Mapper9::ppu_tick(u16 addr)
 {
     unsigned const magic = addr & 0x2FF8;
 

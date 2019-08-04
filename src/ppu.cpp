@@ -313,6 +313,7 @@ template<Scanline s> void scanline_cycle()
         }
         // Signal scanline to mapper:
         if (dot == 260 && rendering()) Cartridge::signal_scanline();
+        Cartridge::ppu_tick(addr);
     }
 }
 

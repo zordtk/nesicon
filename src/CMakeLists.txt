@@ -13,6 +13,7 @@ set(Nesicon_SRCS
     mappers/mapper2.cpp
     mappers/mapper3.cpp
     mappers/mapper4.cpp
+    mappers/mapper9.cpp
 )
 
 add_executable(nesicon ${Nesicon_SRCS})

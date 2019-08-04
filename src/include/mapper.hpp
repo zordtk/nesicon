@@ -29,4 +29,5 @@ class Mapper
     virtual u8 chr_write(u16 addr, u8 v) { return v; }
 
     virtual void signal_scanline() {}
+    virtual void ppu_tick(uint16_t address) {}
 };
